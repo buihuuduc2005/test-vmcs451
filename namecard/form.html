@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Namecard Generator</title>
+</head>
+<body>
+    <h2>Create Your Namecard</h2>
+    
+    <form action="namecard.php" method="GET">
+        <label>Full Name:</label><br>
+        <input type="text" name="fullname" required><br><br>
+
+        <label>Position:</label><br>
+        <input type="text" name="position" required><br><br>
+
+        <label>Gender:</label><br>
+        <select name="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Non-binary">Non-binary</option>
+            <option value="Prefer not to say">Prefer not to say</option>
+        </select><br><br>
+
+        <button type="submit">Generate Namecard</button>
+    </form>
+</body>
+</html>
