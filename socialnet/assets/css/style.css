@@ -1,0 +1,145 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+
+.auth-body {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.auth-form {
+    max-width: 320px;
+    width: 100%;
+}
+
+.auth-form input,
+.auth-form select,
+.auth-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    margin: 5px 0;
+}
+
+.content {
+    padding: 20px;
+}
+
+.user-card {
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 8px;
+}
+
+.profile-card {
+    max-width: 520px;
+    padding: 18px;
+    margin-top: 20px;
+}
+
+.profile-row {
+    margin: 10px 0;
+}
+
+.label {
+    font-weight: 700;
+    display: inline-block;
+    width: 120px;
+}
+
+.empty {
+    color: #777;
+}
+
+.btn {
+    background-color: #04aa6d;
+    color: #fff;
+    border: none;
+    padding: 10px 14px;
+    cursor: pointer;
+}
+
+.btn.block {
+    width: 100%;
+}
+
+.message,
+.alert {
+    margin: 10px 0;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+}
+
+.alert-success {
+    color: #0b5f3e;
+    background: #e9f7f0;
+    border-color: #b7e4cd;
+}
+
+.alert-error {
+    color: #8a1f1f;
+    background: #fdecec;
+    border-color: #f5c2c2;
+}
+
+ul.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+ul.navbar li {
+    float: left;
+}
+
+ul.navbar li a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.navbar li a:hover {
+    background-color: #04aa6d;
+}
+
+ul.navbar li a.active {
+    background-color: #04aa6d;
+    font-weight: 700;
+}
+
+ul.navbar li.right {
+    float: right;
+}
+
+ul.navbar li.welcome {
+    float: right;
+    color: #ddd;
+    padding: 14px 16px;
+}
+
+@media (max-width: 640px) {
+    ul.navbar li,
+    ul.navbar li.right,
+    ul.navbar li.welcome {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}

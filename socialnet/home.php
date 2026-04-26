@@ -20,12 +20,7 @@ $rows = db_query($sql);
 <head>
     <meta charset="UTF-8">
     <title>Home - Social Network</title>
-    <style>
-        body { font-family: sans-serif; margin: 0; background-color: #f4f4f9; }
-        .content { padding: 20px; }
-        .user-card { border: 1px solid #ddd; background: #fff; padding: 12px; margin: 12px 0; border-radius: 8px; }
-        .empty { color: #666; }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <?php include 'menu.php'; ?>

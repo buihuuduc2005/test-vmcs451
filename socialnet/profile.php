@@ -17,21 +17,7 @@ $profile = $rows ? $rows->fetch_assoc() : null;
 <head>
     <meta charset="UTF-8">
     <title>Profile - Social Network</title>
-    <style>
-        body { font-family: sans-serif; margin: 0; background-color: #f4f4f9; }
-        .content { padding: 20px; }
-        .profile-card {
-            max-width: 520px;
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 18px;
-            margin-top: 20px;
-        }
-        .profile-row { margin: 10px 0; }
-        .label { font-weight: 700; display: inline-block; width: 120px; }
-        .empty { color: #777; }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <?php include 'menu.php'; ?>
@@ -40,7 +26,7 @@ $profile = $rows ? $rows->fetch_assoc() : null;
         <h2>My Profile</h2>
 
         <?php if ($profile): ?>
-            <div class="profile-card">
+            <div class="profile-card card">
                 <div class="profile-row"><span class="label">Username:</span> <?php echo htmlspecialchars($profile['username']); ?></div>
                 <div class="profile-row"><span class="label">Full name:</span> <?php echo htmlspecialchars($profile['fullname']); ?></div>
                 <div class="profile-row"><span class="label">Gender:</span> <?php echo htmlspecialchars($profile['gender']); ?></div>
