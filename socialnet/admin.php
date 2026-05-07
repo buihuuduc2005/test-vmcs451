@@ -1,10 +1,11 @@
 <?php
 session_start();
+require_once('db.php');
 require_once('flash.php');
 // Handling the form POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // 1. Connect to MySQL
-    $conn = mysqli_connect("127.0.0.1", "admin", "Abc123", "socialnet_db");
+    $conn = db_connect();
 
     // 2. Grab the data from the HTML form
     $username = $_POST['username'];

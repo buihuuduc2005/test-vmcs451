@@ -1,7 +1,9 @@
 <?php
 // Database setup script to add picture column if it doesn't exist
 
-$conn = mysqli_connect("127.0.0.1", "admin", "Abc123", "socialnet_db");
+require_once('db.php');
+
+$conn = db_connect();
 
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());

@@ -10,6 +10,26 @@ require_once('flash.php');
 $me = $_SESSION['username'];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['delete_account'])) {
+        $me_escaped = escape_sql($me);
+        $rows = db_query("SELECT picture FROM account WHERE username='" . $me_escaped . "'");
+        $profile = $rows ? $rows->fetch_assoc() : null;
+
+        if ($profile && !empty($profile['picture'])) {
+            $picture_path = __DIR__ . '/' . ltrim($profile['picture'], '/');
+            if (file_exists($picture_path)) {
+                unlink($picture_path);
+            }
+        }
+
+        db_query("DELETE FROM account WHERE username='" . $me_escaped . "'");
+
+        $_SESSION = array();
+        session_destroy();
+        header('Location: signin.php?deleted=1');
+        exit();
+    }
+
     $description = isset($_POST['description']) ? $_POST['description'] : '';
     $description_escaped = escape_sql($description);
     $me_escaped = escape_sql($me);
@@ -316,6 +336,11 @@ $flash = consume_flash();
                     <div class="button-group">
                         <button type="submit" class="btn-save">Save Changes</button>
                     </div>
+                </form>
+
+                <form method="POST" action="setting.php" onsubmit="return confirm('Delete your profile permanently? This cannot be undone.');" style="margin-top: 18px;">
+                    <input type="hidden" name="delete_account" value="1">
+                    <button type="submit" class="btn-save" style="background-color: #b91c1c; width: 100%;">Delete Profile</button>
                 </form>
             </div>
         </div>

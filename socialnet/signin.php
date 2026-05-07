@@ -34,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 $flash = consume_flash();
+$deleted_notice = isset($_GET['deleted']) ? 'Your profile has been deleted successfully.' : null;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,6 +46,9 @@ $flash = consume_flash();
 <body class="auth-body">
     <form class="card auth-form" action="signin.php" method="POST">
         <h2>Sign In</h2>
+        <?php if ($deleted_notice): ?>
+            <div class="alert alert-success"><?php echo htmlspecialchars($deleted_notice); ?></div>
+        <?php endif; ?>
         <?php if ($flash): ?>
             <div class="alert alert-<?php echo htmlspecialchars($flash['type']); ?>"><?php echo htmlspecialchars($flash['message']); ?></div>
         <?php endif; ?>
