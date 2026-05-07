@@ -8,7 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = isset($_POST['username']) ? trim($_POST['username']) : '';
     $password = isset($_POST['password']) ? $_POST['password'] : '';
 
-    $sql_stmt = "SELECT password FROM account WHERE username='" . $username . "'";
+    $username_escaped = escape_sql($username);
+    $sql_stmt = "SELECT password FROM account WHERE username='" . $username_escaped . "'";
     $rows = db_query($sql_stmt);
     
     $first_row = $rows->fetch_assoc();
